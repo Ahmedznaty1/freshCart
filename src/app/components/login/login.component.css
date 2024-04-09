@@ -1,0 +1,9 @@
+.password-input{
+    position: relative;
+}
+.eye-icon{
+    position: absolute;
+    right:  15px;
+    top: 31px;
+    cursor: pointer;
+}

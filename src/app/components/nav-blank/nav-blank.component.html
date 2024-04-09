@@ -1,0 +1,85 @@
+<nav #navBar class="navbar navbar-expand-lg bg-body-tertiary fixed-top ">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="home" ><img src="./assets/images/freshcart-logo.svg" alt=""></a>
+      
+      
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+
+
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="desktop_menu" [class.mobile_menu]="menuValue">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a  class="nav-link  text-capitalize  p-2 " routerLink="home" routerLinkActive="active-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  text-capitalize p-2 " routerLink="products"  routerLinkActive="active-link">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  text-capitalize p-2" routerLink="cart" routerLinkActive="active-link">Cart</a>
+            </li>
+          </ul>
+        </div>
+        
+
+
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-user fa-xl text-main"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li role="button" routerLink="/forgetpassword" routerLinkActive="active-link"><a class="dropdown-item">Forget Password</a></li>
+            </ul>
+          </li>
+
+
+
+
+          <div class="d-flex justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link"><i class="fab fa-instagram d-inline me-2 fs-4 text-light-emphasis"></i></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link"><i class="fab fa-facebook d-inline me-2 fs-4 text-light-emphasis "></i></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link"><i class="fab fa-tiktok d-inline me-2 fs-4 text-light-emphasis "></i></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link"><i class="fab fa-twitter d-inline me-2 fs-4 text-light-emphasis "></i></a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link"><i class="fab fa-linkedin d-inline me-2 fs-4 text-light-emphasis "></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"><i class="fab fa-youtube d-inline me-2 fs-4 text-light-emphasis "></i></a>
+            </li>
+
+           
+          </div>
+
+          <li class="nav-item">
+            <span class="nav-link cursor-pointer  text-center fs-5" (click)="signOut()">Sign Out</span>
+          </li> 
+
+              
+  
+          </ul>
+    
+      </div>
+    </div>
+
+
+  </nav>

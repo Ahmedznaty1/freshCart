@@ -1,0 +1,31 @@
+<section class="bg-main-light w-75 mx-auto p-3 my-2 rounded-3">
+    
+    <div class="d-flex justify-content-between align-items-center">
+        <h1>Shop Cart</h1>
+        
+    </div>    
+    <p class="h5 text-main">Total Price: {{cartDetails.totalCartPrice}} <span>EGP</span></p>
+
+    
+        <div class="row pb-2 border-bottom" *ngFor="let item of cartDetails.products">
+            <div class="col-md-1">
+                <img [src]="item.product.imageCover" class="w-100" [alt]="item.product.title">
+            </div>
+            <div class="col-md-11  ">
+                <div class="d-flex justify-content-between align-items-center ">
+                    <div>
+                        <h3 class="h5">{{item.product.title}}</h3>
+                        <p class="m-0 text-main">Price: {{item.price}}</p>
+                        <button (click)="remove(item.product._id)" class="btn m-0 p-0"><i class="fa-regular fa-trash-can text-main"></i> Remove</button>
+                    </div>
+                    <!-- btns -->
+                    <div class="d-flex align-content-center">
+                        <button (click)="update(item.product._id,item.count + 1)" class="btn border border-success px-2">+</button>
+                        <span class="m-2">{{item.count}}</span>
+                        <button (click)="update(item.product._id,item.count - 1)" class="btn border border-success px-2">-</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button [routerLink]="['/check out' , cartDetails._id]" class="btn btn-main mt-2">Online Payment <i class="fa-brands fa-cc-visa"></i></button>
+</section>

@@ -1,0 +1,33 @@
+<section class="bg-main-light p-4 my-3 rounded-3 shadow w-75 mx-auto">
+    <form [formGroup]="checkOut" class="form-control" (ngSubmit)="handleForm()">
+
+        <div>
+            <label for="details">details</label>
+            <textarea  id="details" class="form-control" formControlName="details" ></textarea>
+        </div>
+
+
+
+
+        <div>
+            <label for="phone">phone <i class="fa-regular fa-asterisk my-3" style="color: #ec2727;"></i></label>
+            <input type="tel" id="phone" class="form-control" formControlName="phone">
+            <div class="alert alert-danger mt-3"
+            *ngIf="checkOut.get('phone')?.errors && (checkOut.get('phone')?.touched )">
+               <p *ngIf="checkOut.get('phone')?.getError('required')">phone is Required</p>
+               <p *ngIf="checkOut.get('phone')?.getError('pattern')">accept only Egypt phone numbers</p>
+           </div>
+        </div>
+        <div>
+            <label for="city">city <i class="fa-regular fa-asterisk my-3" style="color: #ec2727;"></i></label>
+            <input type="text" id="city" class="form-control" formControlName="city">
+        </div>
+        <div class="alert alert-danger mt-3"
+         *ngIf="checkOut.get('city')?.errors && (checkOut.get('city')?.touched )">
+            <p *ngIf="checkOut.get('city')?.getError('required')">city is Required</p>
+        </div>
+
+
+        <button [disabled]="checkOut.invalid" class="btn-main mt-3">Check Out</button>
+    </form>
+</section>
